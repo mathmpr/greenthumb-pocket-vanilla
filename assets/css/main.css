@@ -1,0 +1,30 @@
+:root {
+    --text-color: #848484;
+    --text-color-secondary: #A9A9A9;
+    --primary: #15573F;
+    --secondary: #FD9872;
+    --third: #75BC97;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.mobile {
+    display: none;
+}
+
+searchinput-component.pets .image-wrapper {
+    width: 65px;
+}
+
+@media (max-width: 991px) {
+    .mobile {
+        display: block;
+    }
+}
