@@ -1,13 +1,6 @@
 class Header extends XElement {
 
-    belezinha = 'tioope demais';
-    doubled = 'doubled';
-
     render() {
-
-        setTimeout(() => {
-            this.proxy.belezinha = 'ichii';
-        }, 2000);
 
         return `
         <style>
