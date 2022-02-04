@@ -19,6 +19,10 @@ body {
     display: none;
 }
 
+.desktop {
+    display: block;
+}
+
 searchinput-component.pets .image-wrapper {
     width: 65px;
 }
@@ -26,5 +30,9 @@ searchinput-component.pets .image-wrapper {
 @media (max-width: 991px) {
     .mobile {
         display: block;
+    }
+
+    .desktop {
+        display: none;
     }
 }

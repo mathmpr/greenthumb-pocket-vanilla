@@ -56,14 +56,14 @@ class SearchInput extends XElement {
                 background-color: #fff;
             }
             
-            searchinput-component .select div ul option {
+            searchinput-component .select div ul li {
                 padding: 4px 7px;
                 cursor: default;
                 transition: 0.2s linear;        
             }
             
             @media (hover: hover) {            
-                 searchinput-component .select div ul option:hover {
+                 searchinput-component .select div ul li:hover {
                     background-color: var(--third);
                     color: #fff;              
                  }
@@ -148,14 +148,14 @@ class SearchInput extends XElement {
         this.classList.add(this.params.name);
         for (let i in this.params.options) {
             let text = this.params.options[i];
-            let option = document.createElement('option');
-            option.value = i;
-            option.innerText = text;
+            let li = document.createElement('li');
+            li.setAttribute('value', i);
+            li.innerText = text;
             if (this.select('.select ul').childNodes.length === 0) {
                 this.select('.select p').innerText = text;
                 this.select('.select p').setAttribute('value', i);
             }
-            this.select('.select ul').appendChild(option);
+            this.select('.select ul').appendChild(li);
         }
 
         this.select('.select').addEventListener('click', (event) => {
@@ -167,16 +167,16 @@ class SearchInput extends XElement {
             if (node.nodeName.toLowerCase() === 'div' && node.classList.contains('select')) {
                 node.querySelector('div').style.display = 'block';
                 let currentValue = node.querySelector('p').getAttribute('value');
-                node.querySelectorAll('option').forEach((option) => {
-                    option.style.display = 'block';
-                    if (option.getAttribute('value') === currentValue) option.style.display = 'none';
+                node.querySelectorAll('li').forEach((li) => {
+                    li.style.display = 'block';
+                    if (li.getAttribute('value') === currentValue) li.style.display = 'none';
                 });
             }
         });
 
-        this.selects('.select ul option').forEach((option) => {
+        this.selects('.select ul li').forEach((li) => {
 
-            option.addEventListener('click', (event) => {
+            li.addEventListener('click', (event) => {
 
                 let name = this.select('.select').getAttribute('name');
                 let value = event.target.getAttribute('value');
