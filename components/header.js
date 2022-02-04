@@ -54,6 +54,7 @@ class Header extends XElement {
                     background-repeat: no-repeat, no-repeat;
                     background-size: 100% auto, 90% auto;
                     background-position: top left, center bottom;
+                    min-height: 640px;
                 }
                 
                 header .container {
